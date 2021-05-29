@@ -55,3 +55,7 @@ npm run build
 ```sh
 adonis serve --dev
 ```
+
+- Ketikkan http://localhost:3333/books untuk halaman buku
+- Ketikkan http://localhost:3333/categories untuk halaman kategori
+- Ketikkan http://localhost:3333/writers untuk halaman penulis
