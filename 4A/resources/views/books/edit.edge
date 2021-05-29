@@ -24,12 +24,22 @@
                 <input class="form-control" type="text" name="name" value="{{ book.name }}" placeholder="Masukkan Judul Buku">
               </div>
               <div class="form-group">
-                  <label>ID KATEGORI</label>
-                  <input class="form-control" type="text" name="category_id" value="{{ book.category_id }}" placeholder="Masukkan Kategori Buku">
+                  <label>KATEGORI</label>
+                  <select class="custom-select" name="category_id" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    @each(category in categories)
+                      <option value="{{ category.id }}" {{(category.id === book.category_id) ? "selected" : ""}}> {{category.name}} </option>
+                    @endeach
+                  </select>
               </div>
               <div class="form-group">
-                  <label>ID PENULIS</label>
-                  <input class="form-control" type="text" name="writer_id" value="{{ book.writer_id }}" placeholder="Masukkan Penulis Buku">
+                  <label>PENULIS</label>
+                  <select class="custom-select" name="writer_id" id="inputGroupSelect02">
+                    <option selected>Choose...</option>
+                    @each(writer in writers)
+                      <option value="{{ writer.id }}" {{(writer.id === book.writer_id) ? "selected" : ""}}> {{writer.name}} </option>
+                    @endeach
+                  </select>
               </div>
               <div class="form-group">
                   <label>TAHUN TERBIT</label>

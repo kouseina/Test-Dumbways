@@ -1,6 +1,9 @@
 "use strict";
 
 const Book = use("App/Models/Book");
+const Category = use("App/Models/Category");
+const Writer = use("App/Models/Writer");
+const Logger = use("Logger");
 
 class BookController {
   async index({ request, response, view }) {
@@ -11,8 +14,14 @@ class BookController {
     });
   }
 
-  create({ request, response, view }) {
-    return view.render("books.create");
+  async create({ request, response, view }) {
+    const categories = await Category.all();
+    const writers = await Writer.all();
+
+    return view.render("books.create", {
+      categories: categories.rows,
+      writers: writers.rows,
+    });
   }
 
   async store({ request, response, view, session }) {
@@ -32,8 +41,14 @@ class BookController {
   async edit({ request, response, view, params }) {
     const id = params.id;
     const book = await Book.find(id);
+    const categories = await Category.all();
+    const writers = await Writer.all();
 
-    return view.render("books.edit", { book: book });
+    return view.render("books.edit", {
+      book: book,
+      categories: categories.rows,
+      writers: writers.rows,
+    });
   }
 
   async update({ request, response, view, params, session }) {
