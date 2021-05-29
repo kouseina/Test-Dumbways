@@ -7,10 +7,8 @@ class BookController {
   async index({ request, response, view }) {
     const books = await Book.query().with("category").with("writer").fetch();
 
-    Logger.info("book: ", books.rows);
-
     return view.render("books.index", {
-      books: books.rows,
+      books: books.toJSON(),
     });
   }
 
