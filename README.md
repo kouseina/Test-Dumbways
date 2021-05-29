@@ -24,6 +24,12 @@ node 1.js
 
 ##### Cara menjalankan:
 
+- Masuk ke folder 4A atau 4B
+
+```sh
+cd 4A
+```
+
 - Jalankan perintah npm install untuk menginstall semua dependencies
 
 ```sh
