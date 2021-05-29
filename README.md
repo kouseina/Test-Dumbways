@@ -10,7 +10,7 @@
 
 ### Soal 1 - 3
 
-##### Cara menjalankan:
+#### Cara menjalankan:
 
 Wajib install [Node.js](https://nodejs.org/). Arahkan terminal ke folder Test-Dumbways
 
@@ -22,7 +22,7 @@ node 1.js
 
 ### Soal 4
 
-##### Cara menjalankan:
+#### Cara menjalankan:
 
 - Masuk ke folder 4A atau 4B
 
