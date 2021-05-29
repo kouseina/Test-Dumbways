@@ -14,8 +14,14 @@ class BookController {
     });
   }
 
-  create({ request, response, view }) {
-    return view.render("books.create");
+  async create({ request, response, view }) {
+    const categories = await Category.all();
+    const writers = await Writer.all();
+
+    return view.render("books.create", {
+      categories: categories.rows,
+      writers: writers.rows,
+    });
   }
 
   async store({ request, response, view, session }) {
