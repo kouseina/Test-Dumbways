@@ -40,8 +40,8 @@
               <td>
                   <img width="150px" src="{{ book.img }}" alt=""> 
               </td>
-              <td> {{ book.category_id }} </td>
-              <td> {{ book.writer_id }} </td>
+              <td> {{ book.category.name }} </td>
+              <td> {{ book.writer.name }} </td>
               <td> {{ book.publication_year }} </td>
               <td class="text-center">
                 <a href="{{ route('books.edit', { id : book.id }) }}" class="btn btn-sm btn-primary">EDIT</a>

@@ -4,9 +4,11 @@ const Book = use("App/Models/Book");
 
 class BookController {
   async index({ request, response, view }) {
-    const books = await Book.all();
+    const books = await Book.query().with("category").with("writer").fetch();
 
-    return view.render("books.index", { books: books.rows });
+    return view.render("books.index", {
+      books: books.toJSON(),
+    });
   }
 
   create({ request, response, view }) {
